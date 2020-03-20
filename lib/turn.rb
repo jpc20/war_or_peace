@@ -28,5 +28,12 @@ class Turn
     end
   end
 
+  def card_to_spoils(player, num_cards)
+    (num_cards).times do |i|
+      @spoils_of_war << player.deck.cards[0]
+      player.deck.remove_card
+    end
+  end
+
 
 end
