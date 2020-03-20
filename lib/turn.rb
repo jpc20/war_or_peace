@@ -48,5 +48,13 @@ class Turn
     end
   end
 
+  def award_spoils(winner)
+    if winner == "No Winner"
+      return 
+    else
+      winner.deck.cards += @spoils_of_war
+      @spoils_of_war.clear
+    end
+  end
 
 end
