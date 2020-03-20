@@ -23,7 +23,7 @@ class Turn
     elsif type == :war
       return @player1 if player1.deck.rank_of_card_at(2) > player2.deck.rank_of_card_at(2)
       @player2
-    elsif self.type == :mutually_assured_destruction
+    elsif type == :mutually_assured_destruction
         return "No Winner"
     end
   end
@@ -32,6 +32,13 @@ class Turn
     (num_cards).times do |i|
       @spoils_of_war << player.deck.cards[0]
       player.deck.remove_card
+    end
+  end
+
+  def pile_cards
+    if type == :basic
+      card_to_spoils(player1, 1)
+      card_to_spoils(player2, 1)
     end
   end
 
