@@ -8,8 +8,13 @@ class Turn
   end
 
   def type
-    return :war if @player1.deck.rank_of_card_at(0) == @player2.deck.rank_of_card_at(0)
-    :basic
+    if @player1.deck.rank_of_card_at(0) == @player2.deck.rank_of_card_at(0) &&  @player1.deck.rank_of_card_at(2) == @player2.deck.rank_of_card_at(2)
+      return :mutually_assured_destruction
+    elsif @player1.deck.rank_of_card_at(0) == @player2.deck.rank_of_card_at(0)
+      return :war
+    else
+      return :basic
+    end
   end
 
 
