@@ -10,7 +10,7 @@ cards = []
 
 suits.each do |suit|
   values.each do |key, value|
-    cards << $card = Card.new(suit, key, value)
+    cards << card = Card.new(suit, key, value)
   end
 end
 
