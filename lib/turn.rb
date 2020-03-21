@@ -21,7 +21,7 @@ class Turn
       return @player1 if @player1.deck.rank_of_card_at(0) > @player2.deck.rank_of_card_at(0)
       @player2
     elsif type == :war
-      return @player1 if player1.deck.rank_of_card_at(2) > player2.deck.rank_of_card_at(2)
+      return @player1 if @player1.deck.rank_of_card_at(2) > @player2.deck.rank_of_card_at(2)
       @player2
     elsif type == :mutually_assured_destruction
       return "No Winner"
@@ -50,7 +50,7 @@ class Turn
 
   def award_spoils(winner)
     if winner == "No Winner"
-      return 
+      return
     else
       winner.deck.cards += @spoils_of_war
       @spoils_of_war.clear
