@@ -286,7 +286,7 @@ class TurnTest < Minitest::Test
 
     turn.award_spoils(winner)
 
-    assert_equal [card2, card5, card8, card1, card3], player1.deck.cards
+    assert_equal true, (player1.deck.cards - [card2, card5, card8, card3, card1]).empty?
     assert_equal [card4, card6, card7], player2.deck.cards
   end
 
@@ -315,7 +315,7 @@ class TurnTest < Minitest::Test
 
     turn.award_spoils(winner)
 
-    assert_equal [card7, card1, card2, card5, card4, card3, card6], turn.player2.deck.cards
+    assert_equal true, ([card7, card1, card2, card5, card4, card3, card6] - turn.player2.deck.cards).empty?
     assert_equal [card8], turn.player1.deck.cards
   end
 
