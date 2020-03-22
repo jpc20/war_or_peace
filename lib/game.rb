@@ -87,5 +87,4 @@ Type 'GO' to start the game!
     determine_winner()
   end
 
-
 end

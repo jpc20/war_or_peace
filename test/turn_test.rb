@@ -342,7 +342,7 @@ class TurnTest < Minitest::Test
     turn.pile_cards
 
     assert_equal [], turn.spoils_of_war
-
+    assert_equal "No Winner", winner
     turn.award_spoils(winner)
 
     assert_equal [card8], turn.player1.deck.cards
